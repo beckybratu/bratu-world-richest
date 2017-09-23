@@ -9,9 +9,7 @@ class BratuWorldRichest::CLI
   end
 
   def list_richest
-    puts "The riche$t people in the world today are:"
-    puts "1. Buffet
-    2. Gates"
+    @richest = BratuWorldRichest::Richest.now
   end
 
   def menu
