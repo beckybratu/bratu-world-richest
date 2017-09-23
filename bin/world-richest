@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/bratu_world_richest'
+
+BratuWorldRichest::CLI.new.call
