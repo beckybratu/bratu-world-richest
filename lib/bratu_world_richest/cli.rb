@@ -16,6 +16,21 @@ class BratuWorldRichest::CLI
     end
   end
 
+  def input_1
+    @richest_1_more = BratuWorldRichest::Richest.scrape_richest_1
+    puts "This billionaire comes from #{@richest_1_more.country} and owes his fortune to #{@richest_1_more.industry}."
+  end
+
+  def input_2
+    @richest_2_more = BratuWorldRichest::Richest.scrape_richest_1
+    puts "This billionaire comes from #{@richest_2_more.country} and owes his fortune to #{@richest_2_more.industry}."
+  end
+
+  def input_3
+    @richest_3_more = BratuWorldRichest::Richest.scrape_richest_1
+    puts "This billionaire comes from #{@richest_3_more.country} and owes his fortune to #{@richest_3_more.industry}."
+  end
+
   def menu
     input = nil
     while input != "exit"
@@ -25,6 +40,7 @@ class BratuWorldRichest::CLI
       if input.to_i > 0
         the_richest = @three_richest[input.to_i - 1]
         puts "#{the_richest.name} - Net worth: #{the_richest.networth}"
+        buttons
       elsif input == "list"
         list_richest
       elsif input != "exit"
@@ -32,6 +48,17 @@ class BratuWorldRichest::CLI
       end
     end
   end
+
+    def buttons
+      input = nil
+      if input.to_i == 1
+        input_1
+      elsif input.to_i == 2
+        input_2
+      else input.to_i == 3
+        input_3
+      end
+    end
 
   def goodbye
     puts "Thanks for visiting! Go make some money so you can be on this list someday!"
