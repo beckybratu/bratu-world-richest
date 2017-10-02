@@ -9,10 +9,10 @@ class BratuWorldRichest::CLI
   end
 
   def list_richest
-    puts "These are the three richest people in the world today:"
+    puts "These are the three richest people in the world right now:"
     @three_richest = BratuWorldRichest::Richest.now
     @three_richest.each_with_index do |rich_person, i|
-      puts "#{i + 1}. #{rich_person.name} - Net worth: #{rich_person.networth} - Source of wealth: #{rich_person.moneysource}"
+      puts "#{i + 1}. Name: #{rich_person.name} - Net worth: #{rich_person.networth} - Source of wealth: #{rich_person.industry}"
     end
   end
 
