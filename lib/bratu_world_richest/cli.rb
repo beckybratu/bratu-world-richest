@@ -12,7 +12,7 @@ class BratuWorldRichest::CLI
     puts "These are the three richest people in the world right now:"
     @three_richest = BratuWorldRichest::Richest.now
     @three_richest.each_with_index do |rich_person, i|
-      puts "#{i + 1}. Name: #{rich_person.name} - Net worth: #{rich_person.networth} - Source of wealth: #{rich_person.industry}"
+      puts "#{i + 1}. Name: #{rich_person.name} - Net worth: #{rich_person.networth}"
     end
   end
 
@@ -24,10 +24,10 @@ class BratuWorldRichest::CLI
 
       if input.to_i > 0
         the_richest = @three_richest[input.to_i - 1]
-        puts "#{the_richest.name} - Net worth: #{the_richest.networth} - Source of wealth: #{the_richest.moneysource}"
+        puts "#{the_richest.name} - Net worth: #{the_richest.networth}"
       elsif input == "list"
         list_richest
-      else
+      elsif input != "exit"
         puts "You look lost. Type 'list' or 'exit'."
       end
     end
