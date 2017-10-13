@@ -34,7 +34,7 @@ class BratuWorldRichest::CLI
     input = nil
     puts "Enter the number of the billionaire you'd like to get to know or type 'list' to see the Top 3:"
     input = gets.strip.downcase
-    case input.to_i
+    case input
     when "list"
       list_richest
     when 1
