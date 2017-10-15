@@ -12,7 +12,6 @@ class BratuWorldRichest::Scraper
     richest_1.networth = doc.search("div.table-chart div.table-row div.table-cell.active.t-nw").first.text
     richest_1.industry = doc.search("div.table-chart div.table-row div.table-cell.t-industry").first.text
     richest_1.country = doc.search("div.table-chart div.table-row div.table-cell.t-country").first.text
-
     richest_1
   end
 
@@ -22,7 +21,6 @@ class BratuWorldRichest::Scraper
     richest_2.networth = doc.search("div.table-chart div.table-row div.table-cell.active.t-nw")[1].text
     richest_2.industry = doc.search("div.table-chart div.table-row div.table-cell.t-industry")[1].text
     richest_2.country = doc.search("div.table-chart div.table-row div.table-cell.t-country")[1].text
-
     richest_2
   end
 

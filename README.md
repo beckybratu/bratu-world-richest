@@ -1,6 +1,8 @@
 # BratuWorldRichest
 
-Bloomberg's list of the richest people in the world fluctuates constantly. Stay on top of it with this gem.
+Bloomberg's list of the richest people in the world fluctuates constantly. Stay on top of it with this gem, which scrapes Bloomberg's constantly updated list of billionaires: https://www.bloomberg.com/billionaires/
+
+The gem reveals who the top three richest people in the world are at this very moment, including information on their net worth, country of origin and industry.
 
 ## Installation
 

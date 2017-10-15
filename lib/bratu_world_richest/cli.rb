@@ -15,21 +15,6 @@ class BratuWorldRichest::CLI
     end
   end
 
-  def input_1
-    @richest_1_more = BratuWorldRichest::Richest.all[0]
-    puts "This billionaire comes from #{@richest_1_more.country} and owes his fortune to #{@richest_1_more.industry}."
-  end
-
-  def input_2
-    @richest_2_more = BratuWorldRichest::Richest.all[1]
-    puts "This billionaire comes from #{@richest_2_more.country} and owes his fortune to #{@richest_2_more.industry}."
-  end
-
-  def input_3
-    @richest_3_more = BratuWorldRichest::Richest.all[2]
-    puts "This billionaire comes from #{@richest_3_more.country} and owes his fortune to #{@richest_3_more.industry}."
-  end
-
   def menu
     input = nil
     puts "Enter the number of the billionaire you'd like to get to know or type 'list' to see the Top 3:"
@@ -39,15 +24,15 @@ class BratuWorldRichest::CLI
       list_richest
       menu
     when "1"
-      input_1
+      puts "This billionaire comes from #{BratuWorldRichest::Richest.all[0].country} and owes his fortune of #{BratuWorldRichest::Richest.all[0].networth} to #{BratuWorldRichest::Richest.all[0].industry}."
       list_richest
       menu
     when "2"
-      input_2
+      puts "This billionaire comes from #{BratuWorldRichest::Richest.all[1].country} and owes his fortune of #{BratuWorldRichest::Richest.all[1].networth} to #{BratuWorldRichest::Richest.all[1].industry}."
       list_richest
       menu
     when "3"
-      input_3
+      puts "This billionaire comes from #{BratuWorldRichest::Richest.all[2].country} and owes his fortune of #{BratuWorldRichest::Richest.all[2].networth} to #{BratuWorldRichest::Richest.all[2].industry}."
       list_richest
       menu
     when "exit"
@@ -58,32 +43,7 @@ class BratuWorldRichest::CLI
     menu
     end
 
-  #   while input != "exit"
-  #     puts "Enter the number of the billionaire you'd like to get to know or type 'list' to see the Top 3:"
-  #     input = gets.strip.downcase
-  #
-  #     if input.to_i > 0
-  #       the_richest = @three_richest[input.to_i - 1]
-  #       puts "#{the_richest.name} - Net worth: #{the_richest.networth}"
-  #       buttons
-  #     elsif input == "list"
-  #       list_richest
-  #     elsif input != "exit"
-  #       puts "You look lost. Type 'list' or 'exit'."
-  #     end
-  #   end
-  # end
-  #
-  #   def buttons
-  #     input = nil
-  #     if input.to_i == 1
-  #       input_1
-  #     elsif input.to_i == 2
-  #       input_2
-  #     else input.to_i == 3
-  #       input_3
-  #     end
-    end
+  end
 
   def goodbye
     puts "Thanks for visiting! Go make some money so you can be on this list someday!"

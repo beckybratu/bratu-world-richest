@@ -1,5 +1,5 @@
 class BratuWorldRichest::Richest
-  attr_accessor :name, :networth, :industry, :country, :doc
+  attr_accessor :name, :networth, :industry, :country
 
   @@all = []
 
