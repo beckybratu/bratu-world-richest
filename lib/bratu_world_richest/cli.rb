@@ -1,32 +1,32 @@
 #My CLI controller
-
+require 'pry'
 class BratuWorldRichest::CLI
 
   def call
+    BratuWorldRichest::Richest.now
     list_richest
     menu
   end
 
   def list_richest
     puts "These are the three richest people in the world right now:"
-    @three_richest = BratuWorldRichest::Richest.now
-    @three_richest.each_with_index do |rich_person, i|
+    BratuWorldRichest::Richest.all.each_with_index do |rich_person, i|
       puts "#{i + 1}. Name: #{rich_person.name} - Net worth: #{rich_person.networth}"
     end
   end
 
   def input_1
-    @richest_1_more = BratuWorldRichest::Richest.scrape_richest_1
+    @richest_1_more = BratuWorldRichest::Richest.all[0]
     puts "This billionaire comes from #{@richest_1_more.country} and owes his fortune to #{@richest_1_more.industry}."
   end
 
   def input_2
-    @richest_2_more = BratuWorldRichest::Richest.scrape_richest_2
+    @richest_2_more = BratuWorldRichest::Richest.all[1]
     puts "This billionaire comes from #{@richest_2_more.country} and owes his fortune to #{@richest_2_more.industry}."
   end
 
   def input_3
-    @richest_3_more = BratuWorldRichest::Richest.scrape_richest_3
+    @richest_3_more = BratuWorldRichest::Richest.all[2]
     puts "This billionaire comes from #{@richest_3_more.country} and owes his fortune to #{@richest_3_more.industry}."
   end
 
@@ -37,19 +37,25 @@ class BratuWorldRichest::CLI
     case input
     when "list"
       list_richest
-    when 1
+      menu
+    when "1"
       input_1
       list_richest
-    when 2
+      menu
+    when "2"
       input_2
       list_richest
-    when 3
+      menu
+    when "3"
       input_3
       list_richest
+      menu
     when "exit"
       goodbye
     else
       puts "You look lost. Type 'list' or 'exit'."
+      list_richest
+    menu
     end
 
   #   while input != "exit"
