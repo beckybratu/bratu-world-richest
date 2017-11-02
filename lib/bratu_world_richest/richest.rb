@@ -3,15 +3,17 @@ class BratuWorldRichest::Richest
 
   @@all = []
 
-  def self.now
-    scraper = BratuWorldRichest::Scraper.new
-    self.all << scraper.scrape_bloomberg_1
-    self.all << scraper.scrape_bloomberg_2
-    self.all << scraper.scrape_bloomberg_3
+  def initialize
+    @@all << self
   end
 
   def self.all
     @@all
   end
 
+  def self.by_industry(industry)
+    self.all.select do |rich|
+      rich.industry.downcase == industry.downcase
+    end  
+  end
 end

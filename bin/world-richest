@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/bratu_world_richest'
+#require '/home/beckybratu-44683/code/bratu_world_richest/lib/bratu_world_richest'
+require_relative '../lib/bratu_world_richest'
 
 BratuWorldRichest::CLI.new.call
